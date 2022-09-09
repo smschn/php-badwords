@@ -20,6 +20,10 @@
     </h1>
 
     <p>
+        Lunghezza del paragrafo: <?php echo strlen($paragraph) ?>
+    </p>
+    
+    <p>
         <?php echo $paragraph ?>
     </p>
 
