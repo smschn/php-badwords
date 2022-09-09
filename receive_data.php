@@ -8,12 +8,20 @@
 </head>
 <body>
 
+    <?php error_reporting (E_ALL ^ E_NOTICE); ?> <!-- così non vedo errori sull'index di $_POST -->
+
     <?php
         $receivedWord = $_POST['userWord'];
         $paragraph = 'Tempum lorem ipsum dolor sit amet, lorem adipiscing elit, sed do eiusmod lorem incididunt ut labore et lorem magna aliqua.';
     ?>
 
-    <h1>Ciao <?php echo $receivedWord ?>.</h1>
+    <h1>
+        <?php echo $receivedWord ?>
+    </h1>
+
+    <p>
+        <?php echo $paragraph ?>
+    </p>
 
 </body>
 </html>
