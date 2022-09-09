@@ -8,15 +8,16 @@
 </head>
 <body>
 
-    <?php error_reporting (E_ALL ^ E_NOTICE); ?> <!-- così non vedo errori sull'index di $_POST -->
-
     <?php
-        $wordReceived = $_POST['word'];
+        $word = $_POST["word"] ?? '';
+        // ?? '' => soluzione per non far apparire l'errore di index nell'array POST:
+        // se il primo parametro ('word') esiste, usalo; altrimenti usa il secondo parametro: '';
         $paragraph = 'Lorem ciao dolor sit amet, ciao adipiscing elit, sed do ciao tempor incididunt ut labore et ciao magna aliqua.';
     ?>
 
     <h1>
-        <?php echo $wordReceived ?>
+        Parola digitata:
+        <?php echo $word ?>
     </h1>
 
     <p>
@@ -31,7 +32,7 @@
 
     <p>
         Paragrafo con censura della parola 'ciao':
-        <?php echo str_replace('ciao', '***', $paragraph) ?>
+        <?php echo str_replace($word, '***', $paragraph) ?>
     </p>
 
 </body>
