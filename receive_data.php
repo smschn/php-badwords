@@ -11,20 +11,27 @@
     <?php error_reporting (E_ALL ^ E_NOTICE); ?> <!-- così non vedo errori sull'index di $_POST -->
 
     <?php
-        $receivedWord = $_POST['userWord'];
-        $paragraph = 'Tempum lorem ipsum dolor sit amet, lorem adipiscing elit, sed do eiusmod lorem incididunt ut labore et lorem magna aliqua.';
+        $wordReceived = $_POST['word'];
+        $paragraph = 'Lorem ciao dolor sit amet, ciao adipiscing elit, sed do ciao tempor incididunt ut labore et ciao magna aliqua.';
     ?>
 
     <h1>
-        <?php echo $receivedWord ?>
+        <?php echo $wordReceived ?>
     </h1>
 
     <p>
-        Lunghezza del paragrafo: <?php echo strlen($paragraph) ?>
+        Lunghezza del paragrafo:
+        <?php echo strlen($paragraph) ?>
     </p>
-    
+
     <p>
+        Paragrafo normale:
         <?php echo $paragraph ?>
+    </p>
+
+    <p>
+        Paragrafo con censura della parola 'ciao':
+        <?php echo str_replace('ciao', '***', $paragraph) ?>
     </p>
 
 </body>
